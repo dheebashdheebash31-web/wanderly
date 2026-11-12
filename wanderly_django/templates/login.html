@@ -1,0 +1,203 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login | Wanderly</title>
+
+<link rel="icon"
+type="image/x-icon"
+href="{% static 'images/favicon.ico' %}">
+
+<!-- Google Font -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<!-- CSS -->
+
+<link rel="stylesheet"
+href="{% static 'css/login_style.css' %}">
+
+</head>
+
+<body>
+
+<!-- Flash Messages -->
+
+{% if messages %}
+
+<div class="flash-container">
+
+{% for message in messages %}
+
+<div class="flash-message">
+
+{{ message }}
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endif %}
+
+<div class="login-container">
+
+<!-- Left Panel -->
+
+<div class="left-panel">
+
+<div class="overlay">
+
+<div class="welcome-text">
+
+<i class="fa-solid fa-plane"></i>
+
+<h1>Welcome Back!</h1>
+
+<p>
+
+Login to continue your journey,
+discover amazing destinations,
+and explore the world with Wanderly.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Right Panel -->
+
+<div class="right-panel">
+
+<div class="login-box">
+
+<h2>Login</h2>
+
+<p>
+
+Enter your credentials to access your account.
+
+</p>
+
+<form action="{% url 'login' %}" method="POST">
+{% csrf_token %}
+
+<div class="input-box">
+
+<label>Email Address</label>
+
+<input
+type="email"
+name="email"
+placeholder="Enter your email"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>Password</label>
+
+<input
+type="password"
+name="password"
+placeholder="Enter your password"
+required>
+
+</div>
+
+<div class="options">
+
+<label>
+
+<input
+type="checkbox"
+name="remember">
+
+Remember Me
+
+</label>
+
+<a href="#">
+
+Forgot Password?
+
+</a>
+
+</div>
+
+<button type="submit">
+
+<i class="fa-solid fa-right-to-bracket"></i>
+
+Login
+
+</button>
+
+</form>
+
+<div class="signup">
+
+Don't have an account?
+
+<a href="{% url 'signup' %}">
+
+Create Account
+
+</a>
+
+</div>
+
+<hr>
+
+<div class="social-login">
+
+<p>
+
+Or continue with
+
+</p>
+
+<div class="social-icons">
+
+<a href="https://accounts.google.com/"><i class="fab fa-google"></i></a>
+
+<a href="https://www.facebook.com/login/"><i class="fab fa-facebook-f"></i></a>
+
+<a href="https://github.com/login"><i class="fab fa-github"></i></a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

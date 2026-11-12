@@ -1,0 +1,568 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Explore | Wanderly Travel</title>
+
+<link rel="icon"
+type="image/x-icon"
+href="{% static 'images/favicon.ico' %}">
+
+<!-- Google Font -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<!-- Bootstrap -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<!-- CSS -->
+
+<link rel="stylesheet"
+href="{% static 'css/explore_style.css' %}">
+
+</head>
+
+<body>
+
+<!-- Flash Messages -->
+
+{% if messages %}
+
+<div class="container mt-3">
+
+{% for message in messages %}
+
+<div class="alert alert-success alert-dismissible fade show">
+
+{{ message }}
+
+<button
+type="button"
+class="btn-close"
+data-bs-dismiss="alert">
+</button>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endif %}
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="logo">
+
+<i class="fa-solid fa-plane"></i>
+
+Wanderly
+
+</div>
+
+<nav>
+
+<ul>
+
+<li>
+<a href="{% url 'home' %}">
+Home
+</a>
+</li>
+
+<li>
+<a href="{% url 'about' %}">
+About
+</a>
+</li>
+
+<li>
+<a href="{% url 'explore' %}"
+class="active">
+Explore
+</a>
+</li>
+
+<li>
+<a href="{% url 'contact' %}">
+Contact
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+<a href="{% url 'login' %}"
+class="login-btn">
+
+Login
+
+</a>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<h1 class="text-center mb-0">
+
+Explore Amazing Destinations
+
+</h1>
+
+<p class="text-center mb-0">
+
+Find your perfect vacation destination
+and start your next adventure today.
+
+</p>
+
+</section>
+
+<!-- ================= FILTER ================= -->
+
+<section class="explore">
+
+<h2 class="text-center mb-0">
+
+Choose Your Destination
+
+</h2>
+
+<div class="line"></div>
+
+<div class="filter-buttons">
+
+<button
+class="active"
+data-filter="all">
+
+All
+
+</button>
+
+<button data-filter="beach">
+
+Beach
+
+</button>
+
+<button data-filter="mountain">
+
+Mountains
+
+</button>
+
+<button data-filter="city">
+
+City
+
+</button>
+
+<button data-filter="adventure">
+
+Adventure
+
+</button>
+
+</div>
+
+<div class="destination-grid">
+    <!-- Goa -->
+
+<div class="card" data-category="beach">
+
+<img src="{% static 'images/goa.jpg' %}" alt="Goa">
+
+<div class="card-content">
+
+<h3>Goa, India</h3>
+
+<p>From $399</p>
+
+</div>
+
+</div>
+
+
+<!-- Bali -->
+
+<div class="card" data-category="beach">
+
+<img src="{% static 'images/bali.jpg' %}" alt="Bali">
+
+<div class="card-content">
+
+<h3>Bali, Indonesia</h3>
+
+<p>From $499</p>
+
+</div>
+
+</div>
+
+
+<!-- Santorini -->
+
+<div class="card" data-category="beach">
+
+<img src="{% static 'images/greece.jpg' %}" alt="Santorini">
+
+<div class="card-content">
+
+<h3>Santorini, Greece</h3>
+
+<p>From $699</p>
+
+</div>
+
+</div>
+
+
+<!-- Switzerland -->
+
+<div class="card" data-category="mountain">
+
+<img src="{% static 'images/switzerland.jpg' %}" alt="Switzerland">
+
+<div class="card-content">
+
+<h3>Switzerland</h3>
+
+<p>From $899</p>
+
+</div>
+
+</div>
+
+
+<!-- Tokyo -->
+
+<div class="card" data-category="city">
+
+<img src="{% static 'images/tokyo.jpg' %}" alt="Tokyo">
+
+<div class="card-content">
+
+<h3>Tokyo, Japan</h3>
+
+<p>From $799</p>
+
+</div>
+
+</div>
+
+
+<!-- Maldives -->
+
+<div class="card" data-category="beach">
+
+<img src="{% static 'images/maldives.jpg' %}" alt="Maldives">
+
+<div class="card-content">
+
+<h3>Maldives</h3>
+
+<p>From $999</p>
+
+</div>
+
+</div>
+
+
+<!-- Paris -->
+
+<div class="card" data-category="city">
+
+<img src="{% static 'images/paris.jpg' %}" alt="Paris">
+
+<div class="card-content">
+
+<h3>Paris, France</h3>
+
+<p>From $899</p>
+
+</div>
+
+</div>
+
+
+<!-- New York -->
+
+<div class="card" data-category="adventure">
+
+<img src="{% static 'images/newyork.jpg' %}" alt="New York">
+
+<div class="card-content">
+
+<h3>New York, USA</h3>
+
+<p>From $1099</p>
+
+</div>
+
+</div>
+
+
+<!-- Dubai -->
+
+<div class="card" data-category="city">
+
+<img src="{% static 'images/dubai.jpg' %}" alt="Dubai">
+
+<div class="card-content">
+
+<h3>Dubai, UAE</h3>
+
+<p>From $899</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container">
+
+<div class="row">
+
+<!-- Company -->
+
+<div class="col">
+
+<h3>Wanderly</h3>
+
+<p>
+Let's make your next journey your best adventure yet.
+</p>
+
+<div class="social">
+
+<a href="https://www.facebook.com/wanderly_trails" target="_blank">
+<i class="fab fa-facebook-f"></i>
+</a>
+
+<a href="https://www.instagram.com/wanderly_trails" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://x.com/wanderly_trails" target="_blank">
+<i class="fab fa-twitter"></i>
+</a>
+
+<a href="https://www.youtube.com/@wanderly_trails" target="_blank">
+<i class="fab fa-youtube"></i>
+</a>
+
+</div>
+</div>
+
+<!-- Quick Links -->
+
+<div class="col">
+
+<h4>Quick Links</h4>
+
+<ul>
+
+<li><a href="{% url 'home' %}">Home</a></li>
+
+<li><a href="{% url 'about' %}">About</a></li>
+
+<li><a href="{% url 'explore' %}">Explore</a></li>
+
+<li><a href="{% url 'contact' %}">Contact</a></li>
+
+</ul>
+
+</div>
+
+<!-- Top Destinations -->
+
+<div class="col">
+
+<h4>Top Destinations</h4>
+
+<ul>
+
+<li><a href="{% url 'explore' %}?destination=Goa">Goa</a></li>
+
+<li><a href="{% url 'explore' %}?destination=Bali">Bali</a></li>
+
+<li><a href="{% url 'explore' %}?destination=Switzerland">Switzerland</a></li>
+
+<li><a href="{% url 'explore' %}?destination=Japan">Japan</a></li>
+
+</ul>
+
+</div>
+
+<!-- Support -->
+
+<div class="col">
+
+<h4>Support</h4>
+
+<ul>
+
+<li><a href="{% url 'faq' %}">FAQ</a></li>
+
+<li><a href="{% url 'privacy' %}">Privacy Policy</a></li>
+
+<li><a href="{% url 'terms' %}">Terms & Conditions</a></li>
+
+</ul>
+
+</div>
+
+<!-- Newsletter -->
+
+<div class="col">
+
+<h4>Newsletter</h4>
+
+<p>
+
+Subscribe to receive our latest travel offers.
+
+</p>
+
+<form action="{% url 'newsletter' %}" method="POST">
+{% csrf_token %}
+
+<div class="input-group">
+
+<input
+type="email"
+name="email"
+class="form-control"
+placeholder="Enter your email"
+required>
+
+<button
+type="submit"
+class="btn btn-primary">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+<hr>
+
+<p class="text-center mb-0">
+
+© 2026 <strong>Wanderly Travel</strong> |
+All Rights Reserved.
+
+</p>
+<p class="text-center mb-0">
+Designed & Developed by
+<strong>Dheebash V N</strong>
+</p>
+
+</div>
+
+</footer>
+
+<!-- ================= FILTER SCRIPT ================= -->
+
+<script>
+
+const buttons = document.querySelectorAll(".filter-buttons button");
+const cards = document.querySelectorAll(".card");
+
+// Show selected destination from Flask
+
+const destination = "{{ destination|default:'' }}";
+
+if(destination){
+
+cards.forEach(card=>{
+
+const place = card.querySelector("h3").textContent.toLowerCase();
+
+if(place.includes(destination.toLowerCase())){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+}
+
+buttons.forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+buttons.forEach(btn=>btn.classList.remove("active"));
+
+button.classList.add("active");
+
+const filter = button.dataset.filter;
+
+cards.forEach(card=>{
+
+if(filter==="all" || card.dataset.category===filter){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+});
+
+});
+
+</script>
+
+<!-- Bootstrap -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

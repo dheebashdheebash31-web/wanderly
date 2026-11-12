@@ -1,0 +1,91 @@
+.bookings-list{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+    max-width:800px;
+    margin:0 auto;
+}
+
+.booking-card{
+    background:#fff;
+    border-radius:14px;
+    box-shadow:0 8px 20px rgba(0,0,0,.06);
+    padding:24px 28px;
+}
+
+.booking-just-placed{
+    box-shadow:0 0 0 2px #1d4ed8, 0 8px 20px rgba(29,78,216,.2);
+}
+
+.booking-card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:14px;
+}
+
+.booking-card-header h3{
+    font-size:20px;
+    margin-bottom:4px;
+}
+
+.booking-card-header p{
+    color:#666;
+    font-size:14px;
+}
+
+.booking-status{
+    padding:6px 16px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+    white-space:nowrap;
+}
+
+.booking-status-pending{
+    background:#fff3cd;
+    color:#856404;
+}
+
+.booking-status-confirmed{
+    background:#d1e7dd;
+    color:#0f5132;
+}
+
+.booking-status-cancelled{
+    background:#f8d7da;
+    color:#842029;
+}
+
+.booking-item-list{
+    list-style:none;
+    padding:0;
+    margin:0 0 14px;
+    border-top:1px solid #eee;
+    border-bottom:1px solid #eee;
+}
+
+.booking-item-list li{
+    display:flex;
+    justify-content:space-between;
+    padding:10px 0;
+    color:#333;
+    font-size:15px;
+}
+
+.booking-item-list li:not(:last-child){
+    border-bottom:1px solid #f4f4f4;
+}
+
+.booking-card-footer{
+    display:flex;
+    justify-content:space-between;
+    color:#555;
+    font-size:14px;
+}
+
+.booking-total{
+    font-weight:700;
+    color:#1d4ed8;
+    font-size:16px;
+}

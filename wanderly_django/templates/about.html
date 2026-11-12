@@ -1,0 +1,813 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About | Wanderly Travel</title>
+
+    <link rel="icon" type="image/x-icon"
+        href="{% static 'images/favicon.ico' %}">
+
+    <!-- Bootstrap -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+        href="{% static 'css/about_style.css' %}">
+
+</head>
+
+<body>
+
+<!-- Flash Message -->
+
+{% if messages %}
+{% for message in messages %}
+
+<div class="alert alert-success text-center m-0">
+    {{ message }}
+</div>
+
+{% endfor %}
+{% endif %}
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+<div class="logo">
+
+<i class="fa-solid fa-plane"></i>
+
+Wanderly
+
+</div>
+
+<nav>
+
+<ul>
+
+<li>
+<a href="{% url 'home' %}">
+Home
+</a>
+</li>
+
+<li>
+<a href="{% url 'about' %}"class="active">
+About
+</a>
+</li>
+
+<li>
+<a href="{% url 'explore' %}">
+Explore
+</a>
+</li>
+
+<li>
+<a href="{% url 'contact' %}">
+Contact
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+<a
+href="{% url 'login' %}"
+class="login-btn">
+
+Login
+
+</a>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="about-hero">
+
+<div class="container text-center">
+
+<h1>About Wanderly</h1>
+
+<p>
+
+Explore the world with confidence, comfort,
+and unforgettable memories.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about-section">
+
+<div class="container">
+
+<div class="row align-items-center g-5">
+
+<div class="col-lg-6">
+
+<div class="about-image">
+
+<img
+src="{% static 'images/about.jpg' %}"
+class="img-fluid"
+alt="About Wanderly">
+
+
+
+</div>
+
+</div>
+
+<div class="col-lg-6">
+
+<h2 class="fw-bold">
+
+Who We Are
+
+</h2>
+
+<div class="blue-line mb-4"></div>
+
+<p>
+
+Wanderly is a modern travel platform dedicated to helping
+people discover the world's most beautiful destinations.
+Whether you're planning a relaxing beach vacation,
+an adventurous mountain trek, or a cultural city tour,
+we make travel planning easy and enjoyable.
+
+</p>
+
+<p>
+
+Our experienced travel team works with trusted hotels,
+airlines, and local guides to deliver safe,
+affordable, and unforgettable travel experiences.
+
+</p>
+
+<p>
+
+At Wanderly, every journey begins with a dream,
+and we're here to turn that dream into reality.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= MISSION & VISION ================= -->
+
+<section class="mission-section py-5">
+
+<div class="container">
+
+<div class="row g-4">
+
+<div class="col-lg-6">
+
+<div class="card border-0 shadow h-100 p-4">
+
+<i class="fa-solid fa-bullseye fa-3x text-primary mb-3"></i>
+
+<h3>Our Mission</h3>
+
+<p>
+
+Our mission is to make travel simple, affordable, and
+memorable by connecting travelers with the best destinations,
+hotels, and experiences around the world.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-6">
+
+<div class="card border-0 shadow h-100 p-4">
+
+<i class="fa-solid fa-eye fa-3x text-primary mb-3"></i>
+
+<h3>Our Vision</h3>
+
+<p>
+
+To become one of the world's most trusted travel platforms,
+inspiring people to explore new places and create unforgettable
+memories with confidence.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= OUR VALUES ================= -->
+
+<section class="values-section py-5 bg-light">
+
+<div class="container text-center">
+
+<h2 class="fw-bold mb-5">Our Core Values</h2>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+
+<div class="card border-0 shadow h-100 p-4">
+
+<i class="fa-solid fa-handshake fa-3x text-primary mb-3"></i>
+
+<h4>Trust</h4>
+
+<p>
+
+Building long-lasting relationships through honesty,
+transparency, and exceptional customer service.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card border-0 shadow h-100 p-4">
+
+<i class="fa-solid fa-star fa-3x text-primary mb-3"></i>
+
+<h4>Quality</h4>
+
+<p>
+
+Providing premium travel experiences with carefully selected
+destinations and trusted partners.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card border-0 shadow h-100 p-4">
+
+<i class="fa-solid fa-earth-asia fa-3x text-primary mb-3"></i>
+
+<h4>Adventure</h4>
+
+<p>
+
+Helping travelers discover beautiful places,
+new cultures, and unforgettable adventures.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= OUR ACHIEVEMENTS ================= -->
+
+<section class="stats-section py-5">
+
+<div class="container">
+
+<div class="row text-center g-4">
+
+<div class="col-md-3">
+
+<h1 class="text-primary fw-bold">10K+</h1>
+
+<p>Happy Travelers</p>
+
+</div>
+
+<div class="col-md-3">
+
+<h1 class="text-primary fw-bold">250+</h1>
+
+<p>Destinations</p>
+
+</div>
+
+<div class="col-md-3">
+
+<h1 class="text-primary fw-bold">500+</h1>
+
+<p>Tour Packages</p>
+
+</div>
+
+<div class="col-md-3">
+
+<h1 class="text-primary fw-bold">24/7</h1>
+
+<p>Customer Support</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= WHY CHOOSE US ================= -->
+
+<section class="why-us py-5 bg-light">
+
+<div class="container">
+
+<h2 class="text-center fw-bold mb-5">
+
+Why Choose Wanderly?
+
+</h2>
+
+<div class="row g-4">
+
+<div class="col-lg-3 col-md-6">
+
+<div class="card border-0 shadow h-100 text-center p-4">
+
+<i class="fa-solid fa-tags fa-3x text-primary mb-3"></i>
+
+<h4>Affordable Packages</h4>
+
+<p>
+
+Get the best travel deals without compromising on quality.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="card border-0 shadow h-100 text-center p-4">
+
+<i class="fa-solid fa-hotel fa-3x text-primary mb-3"></i>
+
+<h4>Luxury Hotels</h4>
+
+<p>
+
+Stay at top-rated hotels selected for comfort and quality.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="card border-0 shadow h-100 text-center p-4">
+
+<i class="fa-solid fa-headset fa-3x text-primary mb-3"></i>
+
+<h4>24/7 Support</h4>
+
+<p>
+
+Our travel experts are always available to assist you.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="card border-0 shadow h-100 text-center p-4">
+
+<i class="fa-solid fa-plane-departure fa-3x text-primary mb-3"></i>
+
+<h4>Easy Booking</h4>
+
+<p>
+
+Book your dream vacation in just a few simple steps.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= OUR TEAM ================= -->
+
+<section class="team-section py-5">
+
+<div class="container">
+
+<h2 class="text-center fw-bold mb-5">
+Meet Our Team
+</h2>
+
+<div class="row g-4">
+
+<div class="col-lg-4 col-md-6">
+
+<div class="card border-0 shadow text-center p-4">
+
+<img src="{% static 'images/team1.jpg' %}"
+class="rounded-circle mx-auto mb-3"
+width="150"
+height="150"
+alt="Team Member">
+
+<h4>John Smith</h4>
+
+<p class="text-primary">Travel Consultant</p>
+
+<p>
+Helping travelers discover the world's most amazing destinations.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-4 col-md-6">
+
+<div class="card border-0 shadow text-center p-4">
+
+<img src="{% static 'images/team2.jpg' %}"
+class="rounded-circle mx-auto mb-3"
+width="150"
+height="150"
+alt="Team Member">
+
+<h4>Emma Watson</h4>
+
+<p class="text-primary">Tour Manager</p>
+
+<p>
+Planning unforgettable travel experiences with passion and care.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-4 col-md-6 mx-auto">
+
+<div class="card border-0 shadow text-center p-4">
+
+<img src="{% static 'images/team3.jpg' %}"
+class="rounded-circle mx-auto mb-3"
+width="150"
+height="150"
+alt="Team Member">
+
+<h4>David Miller</h4>
+
+<p class="text-primary">Customer Support</p>
+
+<p>
+Available 24/7 to ensure your journey is smooth and memorable.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= TESTIMONIALS ================= -->
+
+<section class="bg-light py-5">
+
+<div class="container">
+
+<h2 class="text-center fw-bold mb-5">
+What Our Travelers Say
+</h2>
+
+<div id="testimonialCarousel"
+     class="carousel slide"
+     data-bs-ride="carousel"
+     data-bs-interval="2500">
+
+<div class="carousel-inner">
+
+<!-- Slide 1 -->
+
+<div class="carousel-item active">
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="card shadow border-0 h-100 p-4 text-center">
+<i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+<p>"Wanderly made our honeymoon unforgettable."</p>
+<h5>- Sophia</h5>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card shadow border-0 h-100 p-4 text-center">
+<i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+<p>"Excellent customer support and affordable packages."</p>
+<h5>- James</h5>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card shadow border-0 h-100 p-4 text-center">
+<i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+<p>"Amazing family vacation to Switzerland."</p>
+<h5>- Olivia</h5>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- Slide 2 -->
+
+<div class="carousel-item">
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="card shadow border-0 h-100 p-4 text-center">
+<i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+<p>"Best travel company I've ever used."</p>
+<h5>- Daniel</h5>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card shadow border-0 h-100 p-4 text-center">
+<i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+<p>"Everything was perfectly planned."</p>
+<h5>- Emma</h5>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card shadow border-0 h-100 p-4 text-center">
+<i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+<p>"Highly recommended for every traveler."</p>
+<h5>- Michael</h5>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Indicators -->
+
+<div class="carousel-indicators mt-4">
+
+<button type="button"
+data-bs-target="#testimonialCarousel"
+data-bs-slide-to="0"
+class="active"></button>
+
+<button type="button"
+data-bs-target="#testimonialCarousel"
+data-bs-slide-to="1"></button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CALL TO ACTION ================= -->
+
+<section class="py-5 text-center">
+
+<div class="container">
+
+<h2 class="fw-bold">
+Ready For Your Next Adventure?
+</h2>
+
+<p class="lead mb-4">
+Book your dream destination today and explore the world with Wanderly.
+</p>
+
+<a href="{% url 'explore' %}" class="btn btn-primary btn-lg me-3">
+Explore Destinations
+</a>
+
+<a href="{% url 'contact' %}" class="btn btn-outline-primary btn-lg">
+Contact Us
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container">
+
+<div class="row gy-4">
+
+<div class="col-lg-3">
+
+<h5>Wanderly</h5>
+
+<p>
+Let's make your next journey joyful and adventurous.
+</p>
+
+<div class="social">
+
+<a href="https://www.facebook.com/wanderly_trails" target="_blank">
+<i class="fab fa-facebook-f"></i>
+</a>
+
+<a href="https://www.instagram.com/wanderly_trails" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://x.com/wanderly_trails" target="_blank">
+<i class="fab fa-twitter"></i>
+</a>
+
+<a href="https://www.youtube.com/@wanderly_trails" target="_blank">
+<i class="fab fa-youtube"></i>
+</a>
+
+</div>
+
+</div>
+
+<div class="col-lg-2">
+
+<h5>Quick Links</h5>
+
+<ul>
+
+<li><a href="{% url 'home' %}">Home</a></li>
+<li><a href="{% url 'about' %}">About</a></li>
+<li><a href="{% url 'explore' %}">Explore</a></li>
+<li><a href="{% url 'contact' %}">Contact</a></li>
+
+</ul>
+
+</div>
+
+<div class="col-lg-2">
+
+<h5>Top Destinations</h5>
+
+<ul>
+
+<li><a href="{% url 'explore' %}?destination=Goa">Goa</a></li>
+<li><a href="{% url 'explore' %}?destination=Bali">Bali</a></li>
+<li><a href="{% url 'explore' %}?destination=Switzerland">Switzerland</a></li>
+<li><a href="{% url 'explore' %}?destination=Japan">Japan</a></li>
+
+</ul>
+
+</div>
+
+<div class="col-lg-2">
+
+<h5>Support</h5>
+
+<ul>
+
+<li><a href="{% url 'faq' %}">FAQ</a></li>
+<li><a href="{% url 'privacy' %}">Privacy Policy</a></li>
+<li><a href="{% url 'terms' %}">Terms & Conditions</a></li>
+
+</ul>
+
+</div>
+
+<div class="col-lg-3">
+
+<h5>Newsletter</h5>
+
+<p>
+Subscribe to receive our latest travel offers.
+</p>
+
+<form action="{% url 'newsletter' %}" method="POST">
+{% csrf_token %}
+
+<div class="input-group">
+
+<input
+type="email"
+name="email"
+class="form-control"
+placeholder="Enter your email"
+required>
+
+<button
+type="submit"
+class="btn btn-primary">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+<hr>
+
+<p class="text-center mb-0">
+
+© 2026 <strong>Wanderly Travel</strong> |
+All Rights Reserved.
+
+</p>
+<p class="text-center mb-0">
+Designed & Developed by
+<strong>Dheebash V N</strong>
+</p>
+
+</div>
+
+</footer>
+
+<!-- Bootstrap -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

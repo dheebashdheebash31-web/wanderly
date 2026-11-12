@@ -1,0 +1,33 @@
+.wanderly-toast-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+}
+
+.wanderly-toast {
+  padding: 0.85rem 1rem;
+  animation: wanderly-toast-in 0.2s ease-out;
+}
+
+@keyframes wanderly-toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.field-error {
+  color: #dc3545;
+  font-size: 0.85rem;
+  margin-top: -0.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}

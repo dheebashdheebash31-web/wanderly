@@ -1,0 +1,646 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact | Wanderly Travel</title>
+
+<link rel="icon"
+type="image/x-icon"
+href="{% static 'images/favicon.ico' %}">
+
+<!-- Google Font -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<!-- Bootstrap -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<!-- CSS -->
+
+<link rel="stylesheet"
+href="{% static 'css/contact_style.css' %}">
+
+</head>
+
+<body>
+
+<!-- Flash Messages -->
+
+{% if messages %}
+
+<div class="container mt-3">
+
+{% for message in messages %}
+
+<div class="alert alert-success alert-dismissible fade show">
+
+{{ message }}
+
+<button
+type="button"
+class="btn-close"
+data-bs-dismiss="alert">
+</button>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endif %}
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="logo">
+
+<i class="fa-solid fa-plane"></i>
+
+Wanderly
+
+</div>
+
+<nav>
+
+<ul>
+
+<li>
+<a href="{% url 'home' %}">
+Home
+</a>
+</li>
+
+<li>
+<a href="{% url 'about' %}">
+About
+</a>
+</li>
+
+<li>
+<a href="{% url 'explore' %}">
+Explore
+</a>
+</li>
+
+<li>
+<a href="{% url 'contact' %}"
+class="active">
+Contact
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+<a
+href="{% url 'login' %}"
+class="login-btn">
+
+Login
+
+</a>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="contact-hero">
+
+<h1>
+
+Contact Us
+
+</h1>
+
+<p>
+
+Have questions about your next trip?
+Our travel experts are here to help you.
+
+</p>
+
+</section>
+
+<!-- ================= CONTACT SECTION ================= -->
+
+<section class="contact">
+
+<div class="contact-container">
+
+<!-- Left -->
+
+<div class="contact-info">
+
+<h2>Get In Touch</h2>
+
+<p>
+
+We'd love to hear from you.
+Feel free to contact us anytime.
+
+</p>
+
+<div class="info-box">
+
+<i class="fa-solid fa-envelope"></i>
+
+<div>
+
+<h4>Email</h4>
+
+<p>info@wanderly.com</p>
+
+</div>
+
+</div>
+
+<div class="info-box">
+
+<i class="fa-solid fa-phone"></i>
+
+<div>
+
+<h4>Phone</h4>
+
+<p>+91 98765 43210</p>
+
+</div>
+
+</div>
+
+<div class="info-box">
+
+<i class="fa-solid fa-location-dot"></i>
+
+<div>
+
+<h4>Address</h4>
+
+<p>
+
+125 Travel Street<br>
+
+Adventure City, India
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Right -->
+
+<div class="contact-form">
+
+<h2>Send a Message</h2>
+
+<form
+action="{% url 'contact_message' %}"
+method="POST">
+{% csrf_token %}
+
+<input
+type="text"
+name="name"
+placeholder="Your Name"
+required>
+
+<input
+type="email"
+name="email"
+placeholder="Email Address"
+required>
+
+<input
+type="text"
+name="subject"
+placeholder="Subject"
+required>
+
+<textarea
+name="message"
+rows="6"
+placeholder="Write your message..."
+required></textarea>
+
+<button
+type="submit">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+Send Message
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= GOOGLE MAP ================= -->
+
+<section class="map-section">
+
+<h2>Find Us</h2>
+
+<div class="line"></div>
+
+<div class="map-container">
+
+<iframe
+src="https://www.google.com/maps?q=Coimbatore,Tamil%20Nadu&output=embed"
+width="100%"
+height="450"
+style="border:0;"
+allowfullscreen=""
+loading="lazy">
+</iframe>
+
+</div>
+
+</section>
+
+<!-- ================= FOLLOW US ================= -->
+
+<section class="follow-section">
+
+<h2>Follow Wanderly</h2>
+
+<p>
+
+Stay connected for the latest travel updates,
+offers and destination guides.
+
+</p>
+
+<div class="social-icons">
+
+<a href="https://www.facebook.com/wanderly_trails" target="_blank">
+<i class="fab fa-facebook-f"></i>
+</a>
+
+<a href="https://www.instagram.com/wanderly_trails" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://x.com/wanderly_trails" target="_blank">
+<i class="fab fa-twitter"></i>
+</a>
+
+<a href="https://www.youtube.com/@wanderly_trails" target="_blank">
+<i class="fab fa-youtube"></i>
+</a>
+
+</div>
+
+</section>
+
+<!-- ================= OFFICE HOURS ================= -->
+
+<section class="office-hours">
+
+<h2>Office Hours</h2>
+
+<div class="hours-grid">
+
+<div class="hour-card">
+
+<i class="fa-solid fa-clock"></i>
+
+<h3>Monday - Friday</h3>
+
+<p>09:00 AM - 06:00 PM</p>
+
+</div>
+
+<div class="hour-card">
+
+<i class="fa-solid fa-calendar-week"></i>
+
+<h3>Saturday</h3>
+
+<p>10:00 AM - 04:00 PM</p>
+
+</div>
+
+<div class="hour-card">
+
+<i class="fa-solid fa-calendar-xmark"></i>
+
+<h3>Sunday</h3>
+
+<p>Closed</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= WHY CONTACT US ================= -->
+
+<section class="why-contact">
+
+<h2>Why Contact Wanderly?</h2>
+
+<div class="why-grid">
+
+<div class="why-card">
+
+<i class="fa-solid fa-headset"></i>
+
+<h3>24/7 Support</h3>
+
+<p>
+
+Our travel experts are always ready to assist you.
+
+</p>
+
+</div>
+
+<div class="why-card">
+
+<i class="fa-solid fa-plane-departure"></i>
+
+<h3>Easy Booking</h3>
+
+<p>
+
+Book your dream vacation quickly and securely.
+
+</p>
+
+</div>
+
+<div class="why-card">
+
+<i class="fa-solid fa-tags"></i>
+
+<h3>Best Prices</h3>
+
+<p>
+
+Enjoy exclusive travel deals and affordable packages.
+
+</p>
+
+</div>
+
+<div class="why-card">
+
+<i class="fa-solid fa-shield-heart"></i>
+
+<h3>Trusted Service</h3>
+
+<p>
+
+Thousands of happy travelers trust Wanderly.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FAQ ================= -->
+
+<section class="faq-section">
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq">
+
+<h4>How do I book a trip?</h4>
+
+<p>
+
+Browse destinations, choose your favorite package,
+and contact us to complete your booking.
+
+</p>
+
+</div>
+
+<div class="faq">
+
+<h4>Can I cancel my booking?</h4>
+
+<p>
+
+Yes. Cancellation policies depend on your selected package.
+
+</p>
+
+</div>
+
+<div class="faq">
+
+<h4>Do you offer international tours?</h4>
+
+<p>
+
+Yes. We provide both domestic and international travel packages.
+
+</p>
+
+</div>
+
+<div class="faq">
+
+<h4>How can I contact support?</h4>
+
+<p>
+
+You can send us a message using the contact form,
+or email us at info@wanderly.com.
+
+</p>
+
+</div>
+
+</section>
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container">
+
+<div class="row gy-4">
+
+<!-- Logo -->
+
+<div class="col-lg-3 col-md-6">
+
+<h3>Wanderly</h3>
+
+<p>
+Let's make your next journey joyful and adventurous.
+</p>
+
+<div class="social-footer">
+
+<a href="https://www.facebook.com/wanderly_trails" target="_blank">
+<i class="fab fa-facebook-f"></i>
+</a>
+
+<a href="https://www.instagram.com/wanderly_trails" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://x.com/wanderly_trails" target="_blank">
+<i class="fab fa-twitter"></i>
+</a>
+
+<a href="https://www.youtube.com/@wanderly_trails" target="_blank">
+<i class="fab fa-youtube"></i>
+</a>
+
+</div>
+
+</div>
+
+<!-- Quick Links -->
+
+<div class="col-lg-2 col-md-6">
+
+<h4>Quick Links</h4>
+
+<ul>
+
+<li><a href="{% url 'home' %}">Home</a></li>
+
+<li><a href="{% url 'about' %}">About</a></li>
+
+<li><a href="{% url 'explore' %}">Explore</a></li>
+
+<li><a href="{% url 'contact' %}">Contact</a></li>
+
+</ul>
+
+</div>
+
+<!-- Top Destinations -->
+
+<div class="col-lg-2 col-md-6">
+
+<h4>Top Destinations</h4>
+
+<ul>
+
+<li><a href="{% url 'explore' %}?destination=Goa">Goa</a></li>
+
+<li><a href="{% url 'explore' %}?destination=Bali">Bali</a></li>
+
+<li><a href="{% url 'explore' %}?destination=Switzerland">Switzerland</a></li>
+
+<li><a href="{% url 'explore' %}?destination=Japan">Japan</a></li>
+
+</ul>
+
+</div>
+
+<!-- Support -->
+
+<div class="col-lg-2 col-md-6">
+
+<h4>Support</h4>
+
+<ul>
+
+<li><a href="{% url 'faq' %}">FAQ</a></li>
+
+<li><a href="{% url 'privacy' %}">Privacy Policy</a></li>
+
+<li><a href="{% url 'terms' %}">Terms & Conditions</a></li>
+
+</ul>
+
+</div>
+
+<!-- Newsletter -->
+
+<div class="col-lg-3 col-md-6">
+
+<h4>Newsletter</h4>
+
+<p>
+
+Subscribe to receive the latest travel offers.
+
+</p>
+
+<form action="{% url 'newsletter' %}" method="POST">
+{% csrf_token %}
+
+<div class="newsletter">
+
+<input
+type="email"
+name="email"
+placeholder="Enter your email"
+required>
+
+<button type="submit">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+<hr>
+
+<p class="text-center mb-0">
+
+© 2026 <strong>Wanderly Travel</strong>. All Rights Reserved.
+
+</p>
+<p class="text-center mb-0">
+Designed & Developed by
+<strong>Dheebash V N</strong>
+</p>
+
+</div>
+
+</footer>
+
+<!-- ================= BOOTSTRAP ================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

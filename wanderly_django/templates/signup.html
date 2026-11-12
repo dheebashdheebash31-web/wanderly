@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sign Up | Wanderly</title>
+
+<link rel="icon" type="image/x-icon"
+href="{% static 'images/favicon.ico' %}">
+
+<link rel="stylesheet"
+href="{% static 'css/signup_style.css' %}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- Flash Messages -->
+
+{% if messages %}
+
+<div class="flash-container">
+
+{% for message in messages %}
+
+<div class="flash-message">
+
+{{ message }}
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endif %}
+
+<div class="signup-container">
+
+    <!-- Left Side -->
+
+    <div class="left-panel">
+
+        <div class="overlay">
+
+            <div class="welcome-text">
+
+                <i class="fa-solid fa-plane"></i>
+
+                <h1>Join Wanderly</h1>
+
+                <p>
+                    Create your account and start exploring the world's
+                    most beautiful destinations today.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Right Side -->
+
+    <div class="right-panel">
+
+        <div class="signup-box">
+
+            <h2>Create Account</h2>
+
+            <p>Fill in your details below.</p>
+
+            <form action="{% url 'signup' %}" method="POST">
+{% csrf_token %}
+
+                <div class="input-box">
+
+                    <label>Full Name</label>
+
+                    <input
+                    type="text"
+                    name="fullname"
+                    placeholder="Enter your full name"
+                    required>
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>Email Address</label>
+
+                    <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required>
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>Phone Number</label>
+
+                    <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Enter your phone number"
+                    required>
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>Password</label>
+
+                    <input
+                    type="password"
+                    name="password"
+                    placeholder="Create password"
+                    required>
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>Confirm Password</label>
+
+                    <input
+                    type="password"
+                    name="confirm_password"
+                    placeholder="Confirm password"
+                    required>
+
+                </div>
+
+                <button type="submit">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                    Create Account
+
+                </button>
+
+            </form>
+
+            <div class="login-link">
+
+                Already have an account?
+
+                <a href="{% url 'login' %}">
+
+                    Login
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

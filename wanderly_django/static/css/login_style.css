@@ -1,0 +1,244 @@
+/*==========================
+GOOGLE FONT
+==========================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+}
+
+/*==========================
+LOGIN PAGE
+==========================*/
+
+.login-container{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+}
+
+/*==========================
+LEFT PANEL
+==========================*/
+
+.left-panel{
+    flex:1;
+    background: url("../images/login-bg.jpg") center center/cover no-repeat;
+    position:relative;
+}
+
+.overlay{
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.35);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:60px;
+}
+
+.welcome-text{
+    color:#fff;
+    max-width:420px;
+}
+
+.welcome-text i{
+    font-size:40px;
+    color:#fff;
+    margin-bottom:20px;
+}
+
+.welcome-text h1{
+    font-size:48px;
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.welcome-text p{
+    font-size:18px;
+    line-height:32px;
+}
+
+/*==========================
+RIGHT PANEL
+==========================*/
+
+.right-panel{
+    flex:1;
+    background:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+.login-box{
+    width:100%;
+    max-width:420px;
+    background:#fff;
+    padding:45px;
+    border-radius:18px;
+    box-shadow:0 15px 35px rgba(0,0,0,.10);
+}
+
+.login-box h2{
+    font-size:38px;
+    margin-bottom:10px;
+    color:#222;
+}
+
+.login-box p{
+    color:#666;
+    margin-bottom:30px;
+    line-height:26px;
+}
+
+/*==========================
+FORM
+==========================*/
+
+.input-box{
+    margin-bottom:20px;
+}
+
+.input-box label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:#333;
+}
+
+.input-box input{
+    width:100%;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    outline:none;
+    font-size:15px;
+    transition:.3s;
+}
+
+.input-box input:focus{
+    border-color:#1d4ed8;
+    box-shadow:0 0 8px rgba(29,78,216,.2);
+}
+
+/*==========================
+OPTIONS
+==========================*/
+
+.options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+    font-size:14px;
+}
+
+.options label{
+    color:#555;
+}
+
+.options a{
+    text-decoration:none;
+    color:#1d4ed8;
+    font-weight:600;
+}
+
+.options a:hover{
+    text-decoration:underline;
+}
+
+/*==========================
+BUTTON
+==========================*/
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:8px;
+    background:#1d4ed8;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#123db8;
+}
+
+/*==========================
+SIGNUP
+==========================*/
+
+.signup{
+    text-align:center;
+    margin-top:25px;
+    color:#666;
+}
+
+.signup a{
+    text-decoration:none;
+    color:#1d4ed8;
+    font-weight:600;
+}
+
+.signup a:hover{
+    text-decoration:underline;
+}
+
+/*==========================
+RESPONSIVE
+==========================*/
+
+@media(max-width:992px){
+
+.login-container{
+    flex-direction:column;
+}
+
+.left-panel{
+    min-height:350px;
+}
+
+.right-panel{
+    padding:30px;
+}
+
+}
+
+@media(max-width:768px){
+
+.welcome-text h1{
+    font-size:36px;
+}
+
+.welcome-text p{
+    font-size:16px;
+}
+
+.login-box{
+    padding:30px;
+}
+
+.login-box h2{
+    font-size:30px;
+}
+
+.options{
+    flex-direction:column;
+    gap:10px;
+    align-items:flex-start;
+}
+
+}
